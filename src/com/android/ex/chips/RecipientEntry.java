@@ -318,9 +318,14 @@ public class RecipientEntry {
         return mEntryType == ENTRY_TYPE_PERSON || mEntryType == ENTRY_TYPE_PERMISSION_REQUEST;
     }
 
+    /** @hide **/
+    protected String getAddress() {
+        return mDisplayName + " <" + mDestination + ">";
+    }
+
     @Override
     public String toString() {
-        return mDisplayName + " <" + mDestination + ">, isValid=" + mIsValid;
+        return getAddress() + ", isValid=" + mIsValid;
     }
 
     /**
